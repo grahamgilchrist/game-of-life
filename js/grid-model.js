@@ -2,9 +2,9 @@ window.modules = window.modules || {};
 window.modules.GridModel = (function ($) {
     'use strict';
 
-    // javascript object depicting a grid model
-    // Use prototypical inheritance to define a javscript OOP like object with "methods"
-    // The window module returns a consturctor for a new grid model
+    // javascript "module" depicting a grid model
+    // We use prototypical inheritance to define a javascript OOP like object with "methods"
+    // The window module returns a constructor for a new grid model
 
     var CELL_DEAD = 0;
     var CELL_ALIVE = 1;

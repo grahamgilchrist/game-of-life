@@ -2,6 +2,9 @@ window.modules = window.modules || {};
 window.modules.engine = (function ($) {
     'use strict';
 
+    // Javascript module which controls the game engine
+    // Keeps state of the game and applying game rules
+
     var STATE_READY = 0;
     var STATE_RUNNING = 1;
     var STATE_PAUSED = 2;
@@ -20,6 +23,7 @@ window.modules.engine = (function ($) {
         init: function (initialGridModel) {
             gridModel = initialGridModel;
             $('#start-game').on('click', module.startGame);
+            $(document).on('view:toggleSeedCell', module.toggleSeedCell);
         },
         startGame: function () {
             if (state === STATE_READY) {
@@ -114,14 +118,14 @@ window.modules.engine = (function ($) {
             
             return numLiveNeighbours;
         },
-        toggleSeedCell: function (row, column) {
+        toggleSeedCell: function (event, eventData) {
             if (state !== STATE_READY) {
                 // only allow setting seeds before game is running
                 return;
             }
     
-            var isAlive = gridModel.isAlive(row, column);
-            gridModel.setState(row, column, !isAlive);
+            var isAlive = gridModel.isAlive(eventData.row, eventData.column);
+            gridModel.setState(eventData.row, eventData.column, !isAlive);
         }
     }
 

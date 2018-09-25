@@ -2,6 +2,8 @@ window.modules = window.modules || {};
 window.modules.gridView = (function ($) {
     'use strict';
 
+    // javascript module responsible for rendering the grid view and handling grid interaction events
+
     var numRows = 100;
     var numCols = 100;
 
@@ -51,7 +53,11 @@ window.modules.gridView = (function ($) {
             var $row = $cell.closest('.row');
             var row = $row.attr('position');
 
-            window.modules.engine.toggleSeedCell(row, column);
+            var eventData = {
+                'row': row,
+                'column': column
+            }
+            $(document).trigger('view:toggleSeedCell', eventData);
         }
     }
 
