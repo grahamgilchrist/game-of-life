@@ -1,4 +1,5 @@
-(function ($) {
+window.modules = window.modules || {};
+window.modules.GridModel = (function ($) {
     'use strict';
 
     // javascript object depicting a grid model
@@ -87,6 +88,5 @@
         }
     };
 
-    window.modules = window.modules || {};
-    window.modules.GridModel = GridModel;
+    return GridModel;
 })(window.jQuery);

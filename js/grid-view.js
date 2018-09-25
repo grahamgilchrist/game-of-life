@@ -1,4 +1,5 @@
-(function ($) {
+window.modules = window.modules || {};
+window.modules.gridView = (function ($) {
     'use strict';
 
     var numRows = 100;
@@ -54,6 +55,5 @@
         }
     }
 
-    window.modules = window.modules || {};
-    window.modules.gridView = module;
+    return module;
 })(window.jQuery);

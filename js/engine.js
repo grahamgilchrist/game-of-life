@@ -1,4 +1,5 @@
-(function ($) {
+window.modules = window.modules || {};
+window.modules.engine = (function ($) {
     'use strict';
 
     var STATE_READY = 0;
@@ -124,6 +125,5 @@
         }
     }
 
-    window.modules = window.modules || {};
-    window.modules.engine = module;
+    return module;
 })(window.jQuery);
