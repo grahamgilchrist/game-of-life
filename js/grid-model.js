@@ -66,7 +66,7 @@ window.modules.GridModel = (function ($) {
     }
 
     GridModel.prototype.setState = function (row, column, alive) {
-        // store original stae for comparison later
+        // store original state for comparison later
         var originalState = this.isAlive(row, column);
 
         // set new value
