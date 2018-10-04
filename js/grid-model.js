@@ -46,6 +46,7 @@ window.modules.GridModel = (function ($) {
             return false;
         }
 
+        // Look up the cell in the grid to find its status
         if (this.grid[row] && this.grid[row][column] === CELL_ALIVE) {
             return true;
         }
